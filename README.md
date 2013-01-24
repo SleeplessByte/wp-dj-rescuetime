@@ -16,7 +16,9 @@ and process it any way you like.
 ###Request
 To do an API request, you need an `api-key`. Get one [here](https://www.rescuetime.com/anapi/setup)..
 Create a new request object:
-		$rt_request = new RescueTimeRequest( $apikey );
+
+	$rt_request = new RescueTimeRequest( $apikey );
+	
 and use one or more of the following functions to manipulate the request:
 - `set_perspective`: Sets the perspective (rank, member, interval)
 - `set_resolution`: Sets the resolution (hour, week, day, month)
@@ -28,10 +30,15 @@ and use one or more of the following functions to manipulate the request:
 - `restrict_project`: Restricts to a certain project
 - `restrict_thing`: Restricts to a certain taxonomy
 - `restrict_thingy`: Restricts to a certain sub-taxonomy
+
 The function calls are chainable, so you can:
-		$rt_request->set_perspective( 'interval' )->set_resolution( 'hour' )->restrict_user( 'derk-jan@karrenbeld.info' );
+		
+	$rt_request->set_perspective( 'interval' )->set_resolution( 'hour' )->restrict_user( 'derk-jan@karrenbeld.info' );
+
 When you are ready call the execute command:
-		$rt_result = $rt_request->execute();
+	
+	$rt_result = $rt_request->execute();
+
 The request object is re-usable.
 		
 ###Result
